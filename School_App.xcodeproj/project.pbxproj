@@ -15,6 +15,7 @@
 		76B52EEA242343AC003030D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B52EE8242343AC003030D2 /* LaunchScreen.storyboard */; };
 		76B52EF5242343AC003030D2 /* School_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B52EF4242343AC003030D2 /* School_AppTests.swift */; };
 		76B52F00242343AC003030D2 /* School_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B52EFF242343AC003030D2 /* School_AppUITests.swift */; };
+		76B52F0E2423471E003030D2 /* ListSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B52F0D2423471E003030D2 /* ListSongs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		76B52EFB242343AC003030D2 /* School_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = School_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B52EFF242343AC003030D2 /* School_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_AppUITests.swift; sourceTree = "<group>"; };
 		76B52F01242343AC003030D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B52F0D2423471E003030D2 /* ListSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				76B52EE6242343AC003030D2 /* Assets.xcassets */,
 				76B52EE8242343AC003030D2 /* LaunchScreen.storyboard */,
 				76B52EEB242343AC003030D2 /* Info.plist */,
+				76B52F0D2423471E003030D2 /* ListSongs.swift */,
 			);
 			path = School_App;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B52F0E2423471E003030D2 /* ListSongs.swift in Sources */,
 				76B52EE2242343AB003030D2 /* ViewController.swift in Sources */,
 				76B52EDE242343AB003030D2 /* AppDelegate.swift in Sources */,
 				76B52EE0242343AB003030D2 /* SceneDelegate.swift in Sources */,

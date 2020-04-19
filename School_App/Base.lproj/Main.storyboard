@@ -42,7 +42,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ior-Gw-Xkx" kind="show" id="9Od-0T-Rak"/>
+                                    <segue destination="jYS-cx-tMb" kind="show" id="2iD-63-1ii"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbr-4E-9HE">
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="39"/>
+            <point key="canvasLocation" x="-458" y="39"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VU2-ox-Mjl">
@@ -137,6 +137,35 @@
             </objects>
             <point key="canvasLocation" x="476.81159420289856" y="552.45535714285711"/>
         </scene>
+        <!--Song List Table View Controller-->
+        <scene sceneID="CUV-9T-2zB">
+            <objects>
+                <tableViewController id="jYS-cx-tMb" customClass="SongListTableViewController" customModule="School_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uKk-4j-y63">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Song Cell" id="n50-bn-oxv">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n50-bn-oxv" id="xqS-bu-OJz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jYS-cx-tMb" id="dZA-MC-oH5"/>
+                            <outlet property="delegate" destination="jYS-cx-tMb" id="jrr-YW-JAd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="USs-t8-KlY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nqc-qb-FA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504" y="-145"/>
+        </scene>
         <!--List Songs-->
         <scene sceneID="tnQ-zy-Y0r">
             <objects>
@@ -164,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olf-wi-z0S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="451" y="-190"/>
+            <point key="canvasLocation" x="1883" y="-152"/>
         </scene>
     </scenes>
 </document>

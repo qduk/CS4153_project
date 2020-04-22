@@ -14,17 +14,15 @@ class SongListTableViewController: UITableViewController {
     //let SongList = ["Hey Jude", "Yesterday", "When I'm 64"]
     
     //Variables for communicating with CoreData
-    var dataSource: [NSManagedObject] = []
+    var dataSource: [Song] = []
     var appDelegate: AppDelegate?
     var context: NSManagedObjectContext?
-    var entity: NSEntityDescription?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
-        entity = NSEntityDescription.entity(forEntityName: "Song", in: context!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,6 +31,14 @@ class SongListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+            dataSource = try context?.fetch(Song.fetchRequest()) ?? []
+        }
+        catch let error as NSError {
+            print("Cannot load data: \(error)")
+        }
+    }
     @IBAction func unwindFromSave(segue: UIStoryboardSegue){
         // Get the segure Source.
         guard let source = segue.source as? AddTitleArtist else {
@@ -40,12 +46,11 @@ class SongListTableViewController: UITableViewController {
             return
         }
         
-        if let entity = self.entity {
-            // Create a new song record
-            let song = NSManagedObject(entity: entity, insertInto: context)
-            //Set attributes in the new song record
-            song.setValue(source.songTitle, forKey: "songTitle")
-            song.setValue(source.songArtist, forKey: "songArtist")
+        // Create a new song record
+        let song = Song(context: context!)
+        //Set attributes in the new song record
+        song.songTitle = source.songTitle
+        song.songArtist = source.songArtist
         
         
         do {
@@ -59,7 +64,6 @@ class SongListTableViewController: UITableViewController {
         catch let error as NSError {
             print("Cannot save data: \(error)")
         }
-      }
     }
 
     // MARK: - Table view data source
@@ -79,24 +83,14 @@ class SongListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Song Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = dataSource[indexPath[1]].value(forKey: "songTitle") as? String
-        cell.detailTextLabel?.text = dataSource[indexPath[1]].value(forKey: "songArtist") as? String
+        cell.textLabel?.text = dataSource[indexPath[1]].songTitle
+        cell.detailTextLabel?.text = dataSource[indexPath[1]].songArtist
         
 
         return cell
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // Fetch the database contents.
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Song")
-        
-        do {
-            dataSource = try context?.fetch(fetchRequest) ?? []
-        }
-        catch let error as NSError {
-            print("Cannot load data: \(error)")
-        }
-    }
+
     
 
     /*

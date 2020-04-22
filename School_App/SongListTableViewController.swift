@@ -11,16 +11,55 @@ import CoreData
 
 class SongListTableViewController: UITableViewController {
     
-    let SongList = ["Hey Jude", "Yesterday", "When I'm 64"]
+    //let SongList = ["Hey Jude", "Yesterday", "When I'm 64"]
+    
+    //Variables for communicating with CoreData
+    var dataSource: [NSManagedObject] = []
+    var appDelegate: AppDelegate?
+    var context: NSManagedObjectContext?
+    var entity: NSEntityDescription?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+        entity = NSEntityDescription.entity(forEntityName: "Song", in: context!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @IBAction func unwindFromSave(segue: UIStoryboardSegue){
+        // Get the segure Source.
+        guard let source = segue.source as? AddTitleArtist else {
+            print("cannot get segue source.")
+            return
+        }
+        
+        if let entity = self.entity {
+            // Create a new song record
+            let song = NSManagedObject(entity: entity, insertInto: context)
+            //Set attributes in the new song record
+            song.setValue(source.songTitle, forKey: "songTitle")
+            song.setValue(source.songArtist, forKey: "songArtist")
+        
+        
+        do {
+            // Update the data store with the manage context
+            try context?.save()
+            // Add this record to the table view data source
+            dataSource.append(song)
+            // Reload the data in the table view
+            self.tableView.reloadData()
+        }
+        catch let error as NSError {
+            print("Cannot save data: \(error)")
+        }
+      }
     }
 
     // MARK: - Table view data source
@@ -32,7 +71,7 @@ class SongListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return SongList.count
+        return dataSource.count
     }
 
     
@@ -40,10 +79,23 @@ class SongListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Song Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = SongList[indexPath[1]]
+        cell.textLabel?.text = dataSource[indexPath[1]].value(forKey: "songTitle") as? String
+        cell.detailTextLabel?.text = dataSource[indexPath[1]].value(forKey: "songArtist") as? String
         
 
         return cell
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Fetch the database contents.
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Song")
+        
+        do {
+            dataSource = try context?.fetch(fetchRequest) ?? []
+        }
+        catch let error as NSError {
+            print("Cannot load data: \(error)")
+        }
     }
     
 

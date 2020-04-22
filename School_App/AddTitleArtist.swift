@@ -9,11 +9,22 @@
 import UIKit
 
 class AddTitleArtist: UIViewController {
+    
+    var songTitle = ""
+    var songArtist = ""
 
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var artistField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        songTitle = titleField.text ?? "No Title"
+        songArtist = artistField.text ?? "No Artist"
     }
     
 

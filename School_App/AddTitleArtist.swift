@@ -23,8 +23,10 @@ class AddTitleArtist: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        songTitle = titleField.text ?? "No Title"
-        songArtist = artistField.text ?? "No Artist"
+        let nextView = segue.destination as! AddChordsViewController
+        
+        nextView.songTitle = titleField.text ?? "No Title"
+        nextView.songArtist = artistField.text ?? "No Artist"
     }
     
 

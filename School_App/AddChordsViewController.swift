@@ -60,6 +60,9 @@ class AddChordsViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     var kindPickerData:[String] = []
     var tonePickerData:[String] = []
     
+    var songTitle = ""
+    var songArtist = ""
+    var verseChords:[String] = []
 
     @IBOutlet weak var chordKind: UITextField!
     @IBOutlet weak var chordTone: UITextField!
@@ -81,6 +84,21 @@ class AddChordsViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         
     }
 
+    @IBAction func addChordButton(_ sender: Any) {
+        verseChords.append(chordTone.text! + " " + chordKind.text!)
+        print(verseChords)
+        print(songTitle)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let finalView = segue.destination as! AddChordsChorusViewController
+        
+        finalView.songTitle = songTitle
+        finalView.songArtist = songArtist
+        finalView.verseChords = verseChords
+
+    }
+    
 }
     
 

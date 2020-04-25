@@ -41,7 +41,7 @@ class SongListTableViewController: UITableViewController {
     }
     @IBAction func unwindFromSave(segue: UIStoryboardSegue){
         // Get the segure Source.
-        guard let source = segue.source as? AddTitleArtist else {
+        guard let source = segue.source as? AddChordsChorusViewController else {
             print("cannot get segue source.")
             return
         }
@@ -51,6 +51,8 @@ class SongListTableViewController: UITableViewController {
         //Set attributes in the new song record
         song.songTitle = source.songTitle
         song.songArtist = source.songArtist
+        song.chorusChords = source.chorusChords as NSObject
+        song.verseChords = source.verseChords as NSObject
         
         
         do {

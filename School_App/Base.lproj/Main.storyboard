@@ -160,9 +160,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="chordKind:" destination="cUX-fF-1MB" eventType="editingDidEnd" id="9bb-wf-OZR"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chord Tone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEq-TT-VIj">
                                 <rect key="frame" x="20" y="168" width="115" height="28"/>
@@ -193,14 +190,19 @@
                         <viewLayoutGuide key="safeArea" id="xA6-ya-gj4"/>
                     </view>
                     <navigationItem key="navigationItem" id="WZK-hn-EmB">
-                        <barButtonItem key="rightBarButtonItem" title="Save Song" id="M1y-Y2-FgH"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save Song" id="M1y-Y2-FgH">
+                            <connections>
+                                <segue destination="f6Y-pM-CVU" kind="unwind" unwindAction="unwindFromSaveWithSegue:" id="33E-xj-fx3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chordKind" destination="8ZF-22-kJr" id="zMY-Ty-sUx"/>
+                        <outlet property="chordKind" destination="8ZF-22-kJr" id="nOy-vL-ANJ"/>
                         <outlet property="chordTone" destination="2jq-4n-zsT" id="Sez-B1-gty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcQ-5i-GVw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="f6Y-pM-CVU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1534.7826086956522" y="652.90178571428567"/>
         </scene>

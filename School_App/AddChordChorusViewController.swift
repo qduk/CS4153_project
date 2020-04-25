@@ -71,6 +71,8 @@ class AddChordsChorusViewController: UIViewController, UITextFieldDelegate, UIPi
     @IBOutlet weak var chordKind: UITextField!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -86,7 +88,10 @@ class AddChordsChorusViewController: UIViewController, UITextFieldDelegate, UIPi
         
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
 
     @IBAction func addChord(_ sender: Any) {
         chorusChords.append(chordKind.text! + " " + chordTone.text!)

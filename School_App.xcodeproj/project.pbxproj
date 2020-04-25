@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		762160142450D7E100DE36F0 /* AddChordChorusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762160132450D7E100DE36F0 /* AddChordChorusViewController.swift */; };
+		762160262453C80B00DE36F0 /* ChordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762160252453C80B00DE36F0 /* ChordListTableViewController.swift */; };
 		769E78AF244D17E4005955D1 /* SongListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769E78AE244D17E4005955D1 /* SongListTableViewController.swift */; };
 		769E78B2244D1D59005955D1 /* SongModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 769E78B0244D1D59005955D1 /* SongModel.xcdatamodeld */; };
 		769E78F3244D22EC005955D1 /* AddTitleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769E78F2244D22EC005955D1 /* AddTitleArtist.swift */; };
@@ -20,7 +21,6 @@
 		76B52EEA242343AC003030D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B52EE8242343AC003030D2 /* LaunchScreen.storyboard */; };
 		76B52EF5242343AC003030D2 /* School_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B52EF4242343AC003030D2 /* School_AppTests.swift */; };
 		76B52F00242343AC003030D2 /* School_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B52EFF242343AC003030D2 /* School_AppUITests.swift */; };
-		76B52F0E2423471E003030D2 /* ListSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B52F0D2423471E003030D2 /* ListSongs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		762160132450D7E100DE36F0 /* AddChordChorusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChordChorusViewController.swift; sourceTree = "<group>"; };
+		762160252453C80B00DE36F0 /* ChordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordListTableViewController.swift; sourceTree = "<group>"; };
 		769E78AE244D17E4005955D1 /* SongListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListTableViewController.swift; sourceTree = "<group>"; };
 		769E78B1244D1D59005955D1 /* SongModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SongModel.xcdatamodel; sourceTree = "<group>"; };
 		769E78F2244D22EC005955D1 /* AddTitleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleArtist.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		76B52EFB242343AC003030D2 /* School_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = School_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B52EFF242343AC003030D2 /* School_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_AppUITests.swift; sourceTree = "<group>"; };
 		76B52F01242343AC003030D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76B52F0D2423471E003030D2 /* ListSongs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSongs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +119,11 @@
 				762160132450D7E100DE36F0 /* AddChordChorusViewController.swift */,
 				769E78F4244D26C5005955D1 /* AddChordsViewController.swift */,
 				769E78F2244D22EC005955D1 /* AddTitleArtist.swift */,
+				762160252453C80B00DE36F0 /* ChordListTableViewController.swift */,
 				769E78AE244D17E4005955D1 /* SongListTableViewController.swift */,
 				76B52EE6242343AC003030D2 /* Assets.xcassets */,
 				76B52EE8242343AC003030D2 /* LaunchScreen.storyboard */,
 				76B52EEB242343AC003030D2 /* Info.plist */,
-				76B52F0D2423471E003030D2 /* ListSongs.swift */,
 			);
 			path = School_App;
 			sourceTree = "<group>";
@@ -278,8 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				769E78AF244D17E4005955D1 /* SongListTableViewController.swift in Sources */,
-				76B52F0E2423471E003030D2 /* ListSongs.swift in Sources */,
 				769E78B2244D1D59005955D1 /* SongModel.xcdatamodeld in Sources */,
+				762160262453C80B00DE36F0 /* ChordListTableViewController.swift in Sources */,
 				769E78F5244D26C5005955D1 /* AddChordsViewController.swift in Sources */,
 				762160142450D7E100DE36F0 /* AddChordChorusViewController.swift in Sources */,
 				769E78F3244D22EC005955D1 /* AddTitleArtist.swift in Sources */,

@@ -39,6 +39,7 @@ class SongListTableViewController: UITableViewController {
             print("Cannot load data: \(error)")
         }
     }
+    
     @IBAction func unwindFromSave(segue: UIStoryboardSegue){
         // Get the segure Source.
         guard let source = segue.source as? AddChordsChorusViewController else {
@@ -90,6 +91,17 @@ class SongListTableViewController: UITableViewController {
         
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedIndex = indexPath
+        performSegue(withIdentifier: "toChordList", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toChordList") {
+            
+        }
     }
     
 

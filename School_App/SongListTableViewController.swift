@@ -17,6 +17,7 @@ class SongListTableViewController: UITableViewController {
     var dataSource: [Song] = []
     var appDelegate: AppDelegate?
     var context: NSManagedObjectContext?
+    var selectedIndex: IndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,13 +95,14 @@ class SongListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedIndex = indexPath
+        selectedIndex = indexPath
         performSegue(withIdentifier: "toChordList", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toChordList") {
-            
+            let DVC = segue.destination as! ChordListTableViewController
+            DVC.sentData1 = dataSource[selectedIndex!.row]
         }
     }
     

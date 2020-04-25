@@ -206,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="1534.7826086956522" y="652.90178571428567"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Chord List Table View Controller-->
         <scene sceneID="bN8-mS-1aZ">
             <objects>
-                <tableViewController id="eGP-ky-Fw2" sceneMemberID="viewController">
+                <tableViewController id="eGP-ky-Fw2" customClass="ChordListTableViewController" customModule="School_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3xp-vT-H6M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

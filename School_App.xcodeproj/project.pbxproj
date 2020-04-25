@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		762160142450D7E100DE36F0 /* AddChordChorusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762160132450D7E100DE36F0 /* AddChordChorusViewController.swift */; };
-		762160262453C80B00DE36F0 /* ChordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762160252453C80B00DE36F0 /* ChordListTableViewController.swift */; };
 		769E78AF244D17E4005955D1 /* SongListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769E78AE244D17E4005955D1 /* SongListTableViewController.swift */; };
 		769E78B2244D1D59005955D1 /* SongModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 769E78B0244D1D59005955D1 /* SongModel.xcdatamodeld */; };
 		769E78F3244D22EC005955D1 /* AddTitleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769E78F2244D22EC005955D1 /* AddTitleArtist.swift */; };
@@ -42,7 +41,6 @@
 
 /* Begin PBXFileReference section */
 		762160132450D7E100DE36F0 /* AddChordChorusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChordChorusViewController.swift; sourceTree = "<group>"; };
-		762160252453C80B00DE36F0 /* ChordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordListTableViewController.swift; sourceTree = "<group>"; };
 		769E78AE244D17E4005955D1 /* SongListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListTableViewController.swift; sourceTree = "<group>"; };
 		769E78B1244D1D59005955D1 /* SongModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SongModel.xcdatamodel; sourceTree = "<group>"; };
 		769E78F2244D22EC005955D1 /* AddTitleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTitleArtist.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				762160132450D7E100DE36F0 /* AddChordChorusViewController.swift */,
 				769E78F4244D26C5005955D1 /* AddChordsViewController.swift */,
 				769E78F2244D22EC005955D1 /* AddTitleArtist.swift */,
-				762160252453C80B00DE36F0 /* ChordListTableViewController.swift */,
 				769E78AE244D17E4005955D1 /* SongListTableViewController.swift */,
 				76B52EE6242343AC003030D2 /* Assets.xcassets */,
 				76B52EE8242343AC003030D2 /* LaunchScreen.storyboard */,
@@ -279,7 +276,6 @@
 			files = (
 				769E78AF244D17E4005955D1 /* SongListTableViewController.swift in Sources */,
 				769E78B2244D1D59005955D1 /* SongModel.xcdatamodeld in Sources */,
-				762160262453C80B00DE36F0 /* ChordListTableViewController.swift in Sources */,
 				769E78F5244D26C5005955D1 /* AddChordsViewController.swift in Sources */,
 				762160142450D7E100DE36F0 /* AddChordChorusViewController.swift in Sources */,
 				769E78F3244D22EC005955D1 /* AddTitleArtist.swift in Sources */,

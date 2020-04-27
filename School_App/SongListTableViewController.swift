@@ -53,8 +53,8 @@ class SongListTableViewController: UITableViewController {
         //Set attributes in the new song record
         song.songTitle = source.songTitle
         song.songArtist = source.songArtist
-        song.chorusChords = source.chorusChords as NSObject
-        song.verseChords = source.verseChords as NSObject
+        song.chorusChords = source.chorusChords
+        song.verseChords = source.verseChords
         
         
         do {

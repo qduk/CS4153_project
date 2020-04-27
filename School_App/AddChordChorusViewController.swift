@@ -94,7 +94,7 @@ class AddChordsChorusViewController: UIViewController, UITextFieldDelegate, UIPi
     }
 
     @IBAction func addChord(_ sender: Any) {
-        chorusChords.append(chordKind.text! + " " + chordTone.text!)
+        chorusChords.append(chordTone.text! + " " + chordKind.text!)
         print(chorusChords)
         print(verseChords)
         print(songTitle)

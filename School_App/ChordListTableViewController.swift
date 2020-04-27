@@ -11,11 +11,14 @@ import UIKit
 class ChordListTableViewController: UITableViewController {
     
     var sentData1: Song?
+    var sections = ["Verse", "Chorus"]
+    var chords: [[String]] = [ [], [] ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        self.chords[0] = sentData1!.verseChords!
+        self.chords[1] = sentData1!.chorusChords!
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,23 +30,27 @@ class ChordListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return self.sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.chords[section].count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chordCell", for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = chords[indexPath.section][indexPath.row]
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sections[section]
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
